@@ -1,14 +1,24 @@
-OBJS = main.o
+OBJECTS = main.o particle.o
+HEADERS = particle.hpp
+CPP_FILES = main.cpp particle.cpp
+
 CC = g++
 LDLIBS = -lsfml-graphics -lsfml-window -lsfml-system
 OUT_NAME = particle_boi
-CPP_FLAGS = -std=c++11
+CPP_FLAGS = -W -Wextra -std=c++11
+FULL_FLAGS = $(CPP_FLAGS) $(LDLIBS)
 
-game: $(OBJS)
-	$(CC) -o $(OUT_NAME) $(OBJS) $(LDLIBS)
+
+
+game: $(OBJECTS) 
+	$(CC) $(FULL_FLAGS) -o $(OUT_NAME) $(OBJECTS) 
+
+%.o: %.cpp $(HEADERS)
+	$(CC) $(FULL_FLAGS) -c -o $@ $<
+	
 
 run: game
 	./$(OUT_NAME)
 
 clean:
-	rm -rf $(OUT_NAME) $(OBJS)
+	rm -rf $(OUT_NAME) $(OBJECTS)

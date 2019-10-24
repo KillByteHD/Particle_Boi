@@ -1,6 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "particle.cpp"
+#include "particle.hpp"
 #include <cmath>
 
 const float FORCE_INTENSITY = 5000.f;
@@ -51,7 +51,7 @@ int main(int argc, char** argv)
         if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
                     a_force1 = atraction_force(sf::Vector2f(sf::Mouse::getPosition(window)) , particle1.position);
                     
-        std::cout << a_force1.x << ',' << a_force1.x << '\n'; 
+        //std::cout << a_force1.x << ',' << a_force1.x << '\n'; 
 
         particle1.update(a_force1 * FORCE_INTENSITY, clock.getElapsedTime().asSeconds());
         //particle2.update(a_force2 * FORCE_INTENSITY, clock.getElapsedTime().asSeconds());
