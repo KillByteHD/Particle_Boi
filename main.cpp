@@ -26,11 +26,6 @@ int main(int argc, char** argv)
             if(event.type == sf::Event::Closed)
                 window.close();
 
-            //if(event.type == sf::Event::MouseButtonPressed)
-                
-                
-
-
         }
 
         if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
@@ -40,7 +35,6 @@ int main(int argc, char** argv)
         particle1.update(a_force1 * FORCE_INTENSITY, clock.getElapsedTime().asSeconds());
 
         window.draw(particle1.shape);
-        //window.draw(particle2.shape);
         window.display();
         window.clear();
         clock.restart();
