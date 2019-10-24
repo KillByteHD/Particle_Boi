@@ -10,14 +10,14 @@ FULL_FLAGS = $(CPP_FLAGS) $(LDLIBS)
 
 
 
-game: $(OBJECTS) 
+compile: $(OBJECTS) 
 	$(CC) $(FULL_FLAGS) -o $(OUT_NAME) $(OBJECTS) 
 
 %.o: %.cpp $(HEADERS)
 	$(CC) $(FULL_FLAGS) -c -o $@ $<
 	
 
-run: game
+run: compile
 	./$(OUT_NAME)
 
 clean:
