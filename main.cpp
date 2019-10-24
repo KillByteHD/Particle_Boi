@@ -15,12 +15,14 @@ int main(int argc, char** argv)
 
     pb::Particle particle1(20,20);
 
+
     window.setFramerateLimit(120);
 
     while(window.isOpen())
     {
         sf::Vector2f a_force1 = sf::Vector2f(0,0);
         sf::Event event;
+
         while(window.pollEvent(event))
         {
             if(event.type == sf::Event::Closed)
@@ -35,11 +37,12 @@ int main(int argc, char** argv)
         particle1.update(a_force1 * FORCE_INTENSITY, clock.getElapsedTime().asSeconds());
 
         window.draw(particle1.shape);
+
         window.display();
         window.clear();
         clock.restart();
         
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
