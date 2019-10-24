@@ -8,6 +8,10 @@
 namespace pb
 {
     class Particle;
+
+    sf::Vector2f atraction_force(sf::Vector2f vm , sf::Vector2f vp);
+
+    float vector_modulus(sf::Vector2f vec);
 }
 
 
