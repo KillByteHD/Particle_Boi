@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 
 
     sf::Font font;
-    if (!font.loadFromFile("Code New Roman.otf"))
+    if (!font.loadFromFile("resources/Code New Roman.otf"))
         return EXIT_FAILURE;
     
     sf::Text text("velocity : ",font,30);
